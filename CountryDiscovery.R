@@ -1,5 +1,5 @@
 # import library
-library(shiny)       # to build rich and productive interactive web apps in R 
+library(shiny)       # to build rich and productive interactive web apps in R
 library(DT)          # to create an HTML widget to display rectangular data (a matrix or data frame)
 library(dplyr)       # used in data selection and group data
 library(shinythemes) # to have better user interface in shiny
@@ -40,20 +40,20 @@ col_names <- c("Country","Region","Population","Area (sq. mi.)",
                "Outdoor Pollution (deaths per 100000)","Total Fertility Rate",
                "Happiness Score","Crime Index")
 
-#edit the column names in the dataset
+# edit the column names in the dataset
 colnames(mydata) <- col_names
 
 # delete the tab space for the "Region" in the dataset
 mydata$Region <- str_trim(mydata$Region)
 
 ui <- fluidPage(
-  theme = shinytheme("flatly"), #using "flatly" as the theme for shiny
+  theme = shinytheme("flatly"), # using "flatly" as the theme for shiny
   navbarPage(
     "Country Discovery",
    
     # create tab named "Data" to show the dataset                    
     tabPanel("Data", 
-        titlePanel("Country Explorer"),
+        titlePanel("Country Discovery"),
         h4("This program displays 19 different datasets of 97 different countries around the world!"),
         
         sidebarLayout(  
@@ -65,7 +65,7 @@ ui <- fluidPage(
                         
           mainPanel(
             h1(textOutput("greeting")),
-            img(src = "World Map.png", height = 400, width = 1000), #insert a world map 
+            img(src = "World Map.png", height = 400, width = 1000), # insert a world map 
             DTOutput("obs") # present the dataset
           )
         )
@@ -77,15 +77,16 @@ ui <- fluidPage(
         verbatimTextOutput("structure")
     ),
    
-    # create tab named "Summary" to show the descriptive analaysis of the dataset                    
+    # create tab named "Summary" to show the descriptive analysis of the dataset                    
     tabPanel("Summary",
         h4("The output of summary() function shows a set of descriptive statistics for every variables."),
-        verbatimTextOutput("summary")),
+        verbatimTextOutput("summary")
+    ),
    
     # create tab named "Exploration" to show the data of a selected country                  
     tabPanel("Exploration", 
-        h4("The filter() function in \"dplyr\" package is used to subset data with matching logical conditions."),
-          
+        h4("The select() function in \"dplyr\" package is used to select desired variables while filter() function to 
+           subset data with matching logical conditions."),
         sidebarLayout(  
           sidebarPanel(
             selectInput(inputId = "country", 
@@ -137,7 +138,7 @@ ui <- fluidPage(
    
     # create tab named "Documentation" to briefly explain the functions used                   
     tabPanel("Documentation", 
-        h4("Country Explorer helps the user to look through different aspects 
+        h4("Country Discovery helps the user to look through different aspects 
             of countries and analysis are also provided by showing plots in data exploration!", br(), br(),
            
            "The libraries used are shiny, DT, dplyr, shinythemes and stringr.", br(), br(),
@@ -149,21 +150,22 @@ ui <- fluidPage(
            
            "summary() function provides basic descriptive statistics and frequencies.", br(), br(),
            
-           "filter() function in \"dplyr\" package will extract the row of specific variable.", br(), br(),
+           "select() function in \"dplyr\" package will extract the column of specific variable while 
+           filter() function will extract the row of specific variable.", br(), br(),
            
-           "par() function is used to set or query graphical parameters", br(), br(),
+           "par() function is used to set or query graphical parameters.", br(), br(),
            
-           "barplot() function creates a bar plot with vertical or horizontal bars", br(), br(),
+           "barplot() function creates a bar plot with vertical or horizontal bars.", br(), br(),
            
-           "group_by function group the dataset by one or more variables", br(), br(),
+           "group_by() function groups the dataset by one or more variables.", br(), br(),
            
-           "summarise_at() function affects variables selected with a character vector or vars()", br(), br(),
+           "summarise_at() function affects variables selected with a character vector or vars().", br(), br(),
            
            "range() function returns a vector containing the minimum and maximum of all the given arguments.", br(), br(),
            
-           "paste() function concatenate vectors after converting to character.", br(), br(),
+           "paste() function concatenates vectors after converting to character.", br(), br(),
            
-           "pairs() function checks possible correlated variables and produces a matrix of scatterplots", br(), br(),
+           "pairs() function checks possible correlated variables and produces a matrix of scatterplots.", br(), br(),
            
            "p() and a() functions are simple functions for constructing HTML documents.", br(),
            "p() function is used to represent a paragraph or a block of text.", br(),
@@ -173,33 +175,33 @@ ui <- fluidPage(
    
     # create tab named "Contributors" to give a simple introduction to the team members                   
     tabPanel("Contributors",
-        titlePanel("List of contributors to Country Explorer"),
+        titlePanel("List of contributors to Country Discovery"),
         
         p(span("Know about us"),style="color:blue;font-size:25px"),
         
-        p("Country Explorer is a Shiny Web Application developed using R programming language.",style="font-size:20px"),
+        p("Country Discovery is a Shiny Web Application developed using R programming language.",style="font-size:20px"),
         
         p("The developmnet team consists of 4 members from University of Malaya taking",
-          span(" WIE2003- Introduction to Data Science ",style="color: orange; font-size:20px"), "course.",style="font-size:20px"),
+          span(" WIE2003 - Introduction to Data Science ",style="color: orange; font-size:20px"), "course.",style="font-size:20px"),
         
-        p(span("The team members:"),style="color:blue;font-size:25px"),
+        p(span("The team members:"),style="color:blue; font-size:25px"),
         
-        p("Lim Jing Yao (U2005275)",style="font-size:20px"),
+        p("Lim Jing Yao (U2005275)",style="color:green; font-size:20px"),
         
-        p("Tiow Kit Keong (U2005264)",style="font-size:20px"),
+        p("Kong Jing Yuaan (U2005395)",style="color:green; font-size:20px"),
         
-        p("Yeo Jie Hui (U2005330)",style="font-size:20px"),
+        p("Tiow Kit Keong (U2005264)",style="color:green; font-size:20px"),
         
-        p("Kong Jing Yuaan (U2005395)",style="font-size:20px")
+        p("Yeo Jie Hui (U2005330)",style="color:green; font-size:20px")
     ),
    
-    # create tab named "Credits" to show our references and sources                  
+    # create tab named "Credits" to show our references and sources                                               
     tabPanel("Credits",
         titlePanel("List of references and sources"),
         p("Description:",style="color:blue;font-size:25px"),
         
         a("https://www.kaggle.com/fernandol/countries-of-the-world", style="font-size:20px"),
-        p("Retrieve Countries, Region, GDP($per capita), Population, Infant Mortality(per 1000 births), Area(sq.mi.), Literacy(%)",style="font-size:21px"),
+        p("Retrieve Country, Region, GDP ($ per capita), Population, Infant Mortality (per 1000 births), Area (sq. mi.), Literacy (%)",style="font-size:21px"),
         
         a("https://www.kaggle.com/dumbgeek/countries-dataset-2020", style="font-size:20px"),
         p("Retrieve Cost of Living Index, Groceries Index, Restaurant Price Index, Local Purchasing Power Index, Crime Index",style="font-size:21px"),
@@ -208,7 +210,7 @@ ui <- fluidPage(
         p("Retrieve Total Fertility Rate, Suicide Rate, Urbanization Rate",style="font-size:21px"),
         
         a("https://www.kaggle.com/brandonhoeksema/pollution-by-country-for-covid19-analysis", style="font-size:20px"),
-        p("Retrieve Outdoor Pollution (Deaths per 100000)",style="font-size:21px"),
+        p("Retrieve Outdoor Pollution (deaths per 100000)",style="font-size:21px"),
         
         a("https://www.kaggle.com/unsdsn/world-happiness?select=2019.csv", style="font-size:20px"),
         p("Retrieve Happiness Score",style="font-size:21px"),
@@ -254,22 +256,22 @@ server <- function(input, output){
   # sum up the selected columns to be shown in the bar plot based on region
   sum_column <- c("Population","Area (sq. mi.)","Total COVID-19 Cases", "Total COVID-19 Deaths","Total COVID-19 Recovered")
   
-  # create a vectors of colours
+  # create a vectors of colors
   mycols = c("tan", "orange1", "magenta", "cyan", "red", "sandybrown", "darkblue", "beige", "coral", "deeppink", "green")
   
   # use pipe to select wanted column and sum up
-  mydata2=mydata%>%group_by(Region)%>%summarise_at(sum_column,sum)
+  mydata2 = mydata%>%group_by(Region)%>%summarise_at(sum_column,sum)
   
   # create a bar plot based on region
   output$plot2 <- renderPlot({
-    par(mar=c(3, 15, 3, 1))
+    par(mar=c(6, 12, 3, 3))
     barplot(mydata2[[input$feature2]],
             main = ifelse(input$show_title,paste("Histogram of", input$feature2, "based on region"), ""),
             xlab = ifelse(input$show_xlab,input$feature2, ""),
             xlim = range(pretty(c(0, mydata2[[input$feature2]]))),
             horiz = TRUE,   # create horizontal bar plot
-            las = 1,        # so that the label are always horizontal
-            col = mycols,   # used different colours to represent different regions
+            las = 1,        # so that the labels are always horizontal
+            col = mycols,   # use different colors to represent different regions
             names.arg = mydata2$Region
     )
   })
