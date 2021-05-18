@@ -1,0 +1,98 @@
+Country,Suicide rate,ISO-code
+Afghanistan,6.4,AFG
+Albania,5.6,ALB
+Algeria,3.3,DZA
+Australia,11.7,AUS
+Austria,11.4,AUT
+Azerbaijan,2.6,AZE
+Bahrain,5.7,BHR
+Bangladesh,6.1,BGD
+Belarus,21.4,BLR
+Belgium,15.7,BEL
+Bolivia,12.9,BOL
+Brazil,6.1,BRA
+Bulgaria,7.9,BGR
+Cambodia,5.9,KHM
+Canada,10.4,CAN
+Chile,9.7,CHL
+China,8,CHN
+Colombia,7,COL
+Costa Rica,7.5,CRI
+Croatia,11.5,HRV
+Cyprus,4.5,CYP
+Denmark,9.2,DNK
+Dominican Republic,10.5,DOM
+Ecuador,7.2,ECU
+El Salvador,13.5,SLV
+Estonia,14.4,EST
+Ethiopia,11.4,ETH
+France,12.1,FRA
+Georgia,6.7,GEO
+Germany,9.1,DEU
+Ghana,8.7,GHA
+Greece,3.8,GRC
+Guatemala,2.9,GTM
+Honduras,3.4,HND
+Hungary,13.6,HUN
+Iceland,13.3,ISL
+India,16.5,IND
+Indonesia,3.7,IDN
+Iran,4,IRN
+Iraq,4.1,IRQ
+Ireland,10.9,IRL
+Israel,5.2,ISR
+Italy,5.5,ITA
+Jamaica,2,JAM
+Japan,14.3,JPN
+Jordan,3.7,JOR
+Kazakhstan,22.8,KAZ
+Kenya,5.6,KEN
+Latvia,17.2,LVA
+Lebanon,3.2,LBN
+Lithuania,25.7,LTU
+Luxembourg,10.4,LUX
+Malaysia,6.2,MYS
+Malta,6.5,MLT
+Mauritius,7.3,MUS
+Mexico,5.2,MEX
+Moldova,13.4,MDA
+Morocco,3.1,MAR
+Nepal,9.6,NPL
+Netherlands,9.6,NLD
+New Zealand,11.6,NZL
+Nicaragua,11.9,NIC
+Nigeria,17.3,NGA
+Norway,10.1,NOR
+Pakistan,3.1,PAK
+Panama,4.4,PAN
+Paraguay,9.3,PRY
+Peru,5.1,PER
+Philippines,3.7,PHL
+Poland,13.4,POL
+Portugal,8.6,PRT
+Qatar,5.8,QAT
+Romania,8,ROU
+Russia,26.5,RUS
+Saudi Arabia,3.4,SAU
+Serbia,10.9,SRB
+Singapore,7.9,SGP
+Slovenia,13.3,SVN
+South Africa,12.8,ZAF
+Spain,6.1,ESP
+Sri Lanka,14.2,LKA
+Sweden,13.8,SWE
+Switzerland,11.3,CHE
+Syria,2.4,SYR
+Tanzania,9.6,TZA
+Thailand,12.9,THA
+Trinidad and Tobago,12.9,TTO
+Tunisia,3.2,TUN
+Turkey,7.2,TUR
+Uganda,20,UGA
+Ukraine,18.5,UKR
+United Kingdom,7.6,GBR
+United States,13.7,USA
+Uruguay,16.5,URY
+Venezuela,3.8,VEN
+Vietnam,7,VNM
+Zimbabwe,19.1,ZWE
